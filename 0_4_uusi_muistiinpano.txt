@@ -1,0 +1,33 @@
+kayttaja->selain:
+note left of selain
+Käyttäjä kirjoinnaa muistiinpanokenttään
+ja painaa "Talleta" nappia
+end note
+
+selain->palvelin: POST https://fullstack-exampleapp.herokuapp.com/notes
+note left of palvelin
+Palvelin tallentaa lomakkeen arvon json alkioon
+ja lähettää selaimelle kehoituksen tehdä uusi pyyntö
+end note
+palvelin->selain: status 302, HTTP GET /notes
+
+note left of selain
+Tämän jälkeen toistuu likimain sama 
+kuvio selaimen ja palvelimen välillä,
+kuin tehtävässä 0.3 (hiukan eroa
+latausajoissa)
+end note
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.css
+palvelin->selain: status 200, sivun CSS muotoilu
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.js
+palvelin->selain: status 200, javascript koodi
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+palvelin->selain: status 200, json raakadata
+
+note left of selain
+HTML-sivu muodostetaan käyttäjän
+katsottavaksi
+end note

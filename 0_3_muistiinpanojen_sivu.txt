@@ -1,0 +1,27 @@
+kayttaja->selain:
+note left of selain
+Käyttäjä painaa linkkiä hiirellä.
+end note
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/notes
+palvelin->selain: status 200, sivun HTML-koodi
+
+note left of palvelin
+Palvelin palauttaa selaimeen html-sivun, joka 
+sisältää otsikon ja syötekentän.
+end note
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.css
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.js
+palvelin->selain: status 200, javascript koodi
+palvelin->selain: status 200, sivun CSS muotoilu
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+palvelin->selain: status 200, json raakadata
+
+note left of selain
+Selain muodostaa html-sivun, jossa 
+main.js koodia käyttäen on luotu
+lista json elementin sisältämistä
+tiedoista ja näyttää sen käyttäjälle.
+end note

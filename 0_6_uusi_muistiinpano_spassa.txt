@@ -1,0 +1,19 @@
+note left of selain
+Selaimessa oleva javascript koodi käsittelee
+lomakkeen poikkeuksellisesti ja lähettää
+muistiinpanon palvelimelle.
+end note
+
+
+selain->palvelin: HTTP POST, muistiinpano json merkkijonona
+note left of palvelin
+palvelin käsittelee tietoja sovelluksen 
+toimintaperiaatteen mukaisesti.
+end note
+
+palvelin->selain: status 201, json merkkijono
+
+note left of selain
+Selaimen koodi päivittää sivustolle palvelimelta
+tulevat käsitellyt tiedot.
+end note
